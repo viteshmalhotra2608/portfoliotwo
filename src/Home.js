@@ -58,12 +58,6 @@ const Home = () => {
                 className="w-full h-full bg-bodyColor overflow-y-scroll scrollbar-thin scrollbar-thumb-[#646464]"
               >
                 <Sidenav />
-                <span
-                  onClick={() => setSidenav(false)}
-                  className="absolute top-0 -right-16 w-12 h-12 bg-bodyColor text-2xl text-textColor hover:text-designColor duration-300 cursor-pointer flex items-center justify-center z-50"
-                >
-                  <MdOutlineClose />
-                </span>
               </motion.div>
             </div>
           </div>
@@ -132,26 +126,6 @@ const Home = () => {
               Projects
             </span>
           </span>
-          {/* Blog Icon */}
-          <span
-            onClick={() =>
-              setAbout(false) &
-              setResume(false) &
-              setProjects(false) &
-              setBlog(true) &
-              setContact(false)
-            }
-            className={`${
-              blog
-                ? "text-designColor"
-                : "w-full h-6 text-textColor text-xl flex items-center justify-center hover:text-designColor duration-300 cursor-pointer relative group"
-            } w-full h-6 text-xl flex items-center justify-center hover:text-designColor duration-300 cursor-pointer relative group`}
-          >
-            <SiGooglechat />
-            <span className="text-black font-medium text-xs uppercase bg-designColor px-4 py-[1px] rounded-xl absolute left-0 translate-x-8 group-hover:translate-x-12 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
-              Blog
-            </span>
-          </span>
           {/* Contact Icon */}
           <span
             onClick={() =>
@@ -172,12 +146,6 @@ const Home = () => {
               Contact
             </span>
           </span>
-          <span className="w-full h-6 text-textColor text-xl flex items-center justify-center hover:text-designColor duration-300 cursor-pointer relative group">
-            <BsTelephonePlusFill />
-            <span className="text-black font-medium text-xs uppercase bg-designColor px-4 py-[1px] rounded-xl absolute left-0 translate-x-8 group-hover:translate-x-12 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
-              Call
-            </span>
-          </span>
         </div>
         {/* ======= Other Icons End */}
       </div>
@@ -192,7 +160,6 @@ const Home = () => {
             <About />
             <Resume />
             <Projects />
-            <Blog />
             <Contact />
           </div>
           {/* ======================== Smaller device content End ========================== */}
@@ -223,15 +190,6 @@ const Home = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Projects />
-              </motion.div>
-            )}
-            {blog && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Blog />
               </motion.div>
             )}
             {contact && (
